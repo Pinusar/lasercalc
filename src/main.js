@@ -13,7 +13,7 @@ import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import Toast from "vue-toastification";
 import "vue-toastification/dist/index.css";
 
-/* import specific icons */
+/* import specific iconss */
 import {
     faBell,
     faChartArea,
