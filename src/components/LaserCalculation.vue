@@ -2,7 +2,7 @@
   <div class="hello">
     <div class="row">
       <div class="col-6 mb-5">
-        <h1>Item</h1>
+        <h1>Item creation</h1>
 
         <select v-model="material" class="form-select">
           <option>Carbon steel</option>
@@ -12,13 +12,13 @@
         </select>
 
         <label>Length (mm)</label>
-        <input class="form-control" type="text" v-model="length">
+        <input class="form-control" type="number" v-model="length">
 
         <p>Width (mm)</p>
-        <input class="form-control" type="text" v-model="width">
+        <input class="form-control" type="number" v-model="width">
 
         <p>Thickness (mm)</p>
-        <input class="form-control" type="text" v-model="thickness">
+        <input class="form-control" type="number" v-model="thickness">
 
         <br>
       </div>
