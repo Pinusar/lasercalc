@@ -68,9 +68,9 @@
         </div>
 
         <div class="form-group row mt-3">
-          <label for="cutInWidth" class="col-sm-2 col-form-label">Quantity</label>
+          <label for="currentCutInQuantity" class="col-sm-2 col-form-label">Quantity</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text" v-model="cutInWidth" id="cutInWidth" @input="removePrecedingZero('cutInWidth')">
+            <input class="form-control" type="text" v-model="currentCutInQuantity" id="currentCutInQuantity" @input="removePrecedingZero('currentCutInQuantity')">
           </div>
         </div>
         <button @click="addCutIn" class="btn-lg btn-primary m-2">Add</button>
@@ -150,14 +150,6 @@
         </div>
       </div>
     </div>
-
-
-
-
-
-
-
-    <!--    <p>Cost of cut-ins (stoimost vrezok): kolvo vrezom, v zavisimosti ot tolshinq i metala</p>-->
   </div>
 </template>
 
@@ -179,6 +171,7 @@ export default {
       cutInLength: 0,
       cutInWidth: 0,
       cutInRadius: 0,
+      currentCutInQuantity: 0,
       cutIns: [],
       costOfCutData: costs
     }
@@ -224,17 +217,20 @@ export default {
   },
   methods: {
     addCutIn() {
-      this.cutIns.push(
-          {
-            type: this.cutInType,
-            width: this.cutInWidth,
-            length: this.cutInLength,
-            radius: this.cutInRadius
-          }
-      )
+      for (let i = 0; i < this.currentCutInQuantity; i++) {
+        this.cutIns.push(
+            {
+              type: this.cutInType,
+              width: this.cutInWidth,
+              length: this.cutInLength,
+              radius: this.cutInRadius
+            }
+        )
+      }
       this.cutInWidth = 0;
       this.cutInLength = 0;
       this.cutInRadius = 0;
+      this.currentCutInQuantity = 0;
     },
     getSquarePerimeter(width, length) {
       return 2 * width + 2 * length
