@@ -188,7 +188,7 @@ export default {
         return 0
       }
       let cost = this.costDataForSelectedMaterial.filter(c => c.thickness == this.thickness)[0]
-      return cost.cutting * this.cutInQuantity
+      return (cost?.cutting ?? 0) * this.cutInQuantity
     }
   },
   methods: {
