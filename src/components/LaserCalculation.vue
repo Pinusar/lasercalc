@@ -46,10 +46,13 @@
 
 <!--      CUT-INS-->
       <div class="col-md-6">
-        <div class="d-flex align-items-center">
-          <h1>Add cut-in</h1>
-          <img :src="getIcon()" alt="Icon" class="icon ml-2" />
-        </div>
+          <div class="d-flex justify-content-center align-items-center">
+            <div class="d-flex">
+              <h1>Add cut-in</h1>
+              <img :src="getIcon()" alt="Icon" class="icon ml-2" />
+            </div>
+
+          </div>
         <select v-model="cutInType" class="form-select">
           <option>Round</option>
           <option>Square</option>
@@ -154,7 +157,7 @@
             <div class="col">Cost of material</div>
             <div class="col"><strong>{{ costOfMaterial.toFixed(2) }}</strong></div>
           </div>
-          <div class="row bg-info border-bottom-dark">
+          <div class="row bg-primary text-white border-bottom-dark">
             <div class="col">Total cost</div>
             <div class="col"><strong>{{ totalCost.toFixed(2) }}</strong></div>
           </div>
