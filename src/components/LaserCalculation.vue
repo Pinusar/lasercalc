@@ -39,7 +39,10 @@
 
 <!--      CUT-INS-->
       <div class="col-md-6">
-        <h1>Add cut-in</h1>
+        <div class="d-flex align-items-center">
+          <h1>Add cut-in</h1>
+          <img :src="getIcon()" alt="Icon" class="icon ml-2" />
+        </div>
         <select v-model="cutInType" class="form-select">
           <option>Round</option>
           <option>Square</option>
@@ -146,6 +149,8 @@
 <script>
 import costs from "@/repository/costs";
 import * as XLSX from "xlsx";
+import circleIcon from '@/assets/img/circle.png';
+import squareIcon from '@/assets/img/square.png';
 export default {
   name: 'LaserCalculation',
   props: {
@@ -256,6 +261,9 @@ export default {
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
+    },
+    getIcon() {
+      return this.cutInType === 'Square' ? squareIcon : circleIcon
     }
   },
   mounted() {
@@ -279,5 +287,9 @@ li {
 }
 a {
   color: #42b983;
+}
+.icon {
+  width: 24px;
+  height: 24px;
 }
 </style>
