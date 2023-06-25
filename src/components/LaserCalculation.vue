@@ -2,7 +2,7 @@
   <div class="hello">
     <div class="row">
       <div class="col-6 mb-5">
-        <h1>Item creation</h1>
+        <h1>Item</h1>
 
         <select v-model="material" class="form-select">
           <option>Carbon steel</option>
@@ -11,14 +11,26 @@
           <option>Copper</option>
         </select>
 
-        <label>Length (mm)</label>
-        <input class="form-control" type="text" v-model="length" @input="removePrecedingZero('length')">
+        <div class="form-group row mt-3">
+          <label for="length" class="col-sm-2 col-form-label">Length (mm)</label>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" v-model="length" id="length" @input="removePrecedingZero('length')">
+          </div>
+        </div>
 
-        <label>Width (mm)</label>
-        <input class="form-control" type="text" v-model="width" @input="removePrecedingZero('width')">
+        <div class="form-group row ">
+          <label for="width" class="col-sm-2 col-form-label">Width (mm)</label>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" id="width" v-model="width" @input="removePrecedingZero('width')">
+          </div>
+        </div>
 
-        <label>Thickness (mm)</label>
-        <input class="form-control" type="text" v-model="thickness" @input="removePrecedingZero('thickness')">
+        <div class="form-group row ">
+          <label for="thickness" class="col-sm-2 col-form-label">Thickness (mm)</label>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" id="thickness" v-model="thickness" @input="removePrecedingZero('thickness')">
+          </div>
+        </div>
 
         <br>
       </div>
