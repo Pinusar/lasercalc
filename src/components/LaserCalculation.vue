@@ -178,7 +178,7 @@ export default {
         return 0
       }
       let cost = this.costDataForSelectedMaterial.filter(c => c.thickness == this.thickness)[0]
-      return cost.small
+      return cost?.small ?? 0
     },
     currentCostOfCut() {
       return Math.round(this.currentCostOfCutPerMeter * this.cutLength) / 100
