@@ -114,56 +114,64 @@
         </div>
       </div>
 
+
       <div class="col-md-6">
-        <div class="col-md-6 m-auto">
-          <h1>Cut-ins</h1>
-          <div class="row bg-warning border-bottom-dark">
-            <div class="col">Cut-in type</div>
-            <div class="col"><strong>width</strong> mm</div>
-            <div class="col"><strong>length</strong> mm</div>
-            <div class="col"><strong>radius</strong> mm</div>
-          </div>
-          <div v-for="(cutIn, index) in cutIns" :key="index" class="row bg-warning border-bottom-dark">
-            <div class="col">{{ cutIn.type }}</div>
-            <div class="col"><strong>{{ cutIn.width }}</strong> mm</div>
-            <div class="col"><strong>{{ cutIn.length }}</strong> mm</div>
-            <div class="col"><strong>{{ cutIn.radius }}</strong> mm</div>
+        <div class="card bg-warning">
+          <div class="card-body">
+            <div class="col-md-6 m-auto">
+              <h1>Cut-ins</h1>
+              <div class="row border-bottom-dark">
+                <div class="col">Cut-in type</div>
+                <div class="col"><strong>width</strong> mm</div>
+                <div class="col"><strong>length</strong> mm</div>
+                <div class="col"><strong>radius</strong> mm</div>
+              </div>
+              <div v-for="(cutIn, index) in cutIns" :key="index" class="row bg-warning border-bottom-dark">
+                <div class="col">{{ cutIn.type }}</div>
+                <div class="col"><strong>{{ cutIn.width }}</strong> mm</div>
+                <div class="col"><strong>{{ cutIn.length }}</strong> mm</div>
+                <div class="col"><strong>{{ cutIn.radius }}</strong> mm</div>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="col-md-6 m-auto">
-          <h1>Results</h1>
-          <div class="row bg-info border-bottom-dark">
-            <div class="col">Weight</div>
-            <div class="col"><strong>{{ weight }}</strong></div>
+          <div class="card bg-info mt-3">
+            <div class="card-body">
+              <h1>Results</h1>
+              <div class="row bg-info border-bottom-dark">
+                <div class="col">Weight</div>
+                <div class="col"><strong>{{ weight }}</strong></div>
+              </div>
+              <div class="row bg-info border-bottom-dark">
+                <div class="col">Cut-in quantity</div>
+                <div class="col"><strong>{{ cutInQuantity }}</strong></div>
+              </div>
+              <div class="row bg-info border-bottom-dark">
+                <div class="col">Cut length (m)</div>
+                <div class="col"><strong>{{ cutLength }}</strong></div>
+              </div>
+              <div class="row bg-info border-bottom-dark">
+                <div class="col">Cost of cut</div>
+                <div class="col"><strong>{{ currentCostOfCut.toFixed(2) }}</strong></div>
+              </div>
+              <div class="row bg-info border-bottom-dark">
+                <div class="col">Cost of cut-ins</div>
+                <div class="col"><strong>{{ costOfCutIns.toFixed(2) }}</strong></div>
+              </div>
+              <div class="row bg-info border-bottom-dark">
+                <div class="col">Cost of material</div>
+                <div class="col"><strong>{{ costOfMaterial.toFixed(2) }}</strong></div>
+              </div>
+              <div class="row bg-primary text-white border-bottom-dark">
+                <div class="col">Total cost</div>
+                <div class="col"><strong>{{ totalCost.toFixed(2) }}</strong></div>
+              </div>
+              <button @click="downloadResults" class="btn-lg btn-success m-3">Download Results</button>
+            </div>
           </div>
-          <div class="row bg-info border-bottom-dark">
-            <div class="col">Cut-in quantity</div>
-            <div class="col"><strong>{{ cutInQuantity }}</strong></div>
-          </div>
-          <div class="row bg-info border-bottom-dark">
-            <div class="col">Cut length (m)</div>
-            <div class="col"><strong>{{ cutLength }}</strong></div>
-          </div>
-          <div class="row bg-info border-bottom-dark">
-            <div class="col">Cost of cut</div>
-            <div class="col"><strong>{{ currentCostOfCut.toFixed(2) }}</strong></div>
-          </div>
-          <div class="row bg-info border-bottom-dark">
-            <div class="col">Cost of cut-ins</div>
-            <div class="col"><strong>{{ costOfCutIns.toFixed(2) }}</strong></div>
-          </div>
-          <div class="row bg-info border-bottom-dark">
-            <div class="col">Cost of material</div>
-            <div class="col"><strong>{{ costOfMaterial.toFixed(2) }}</strong></div>
-          </div>
-          <div class="row bg-primary text-white border-bottom-dark">
-            <div class="col">Total cost</div>
-            <div class="col"><strong>{{ totalCost.toFixed(2) }}</strong></div>
-          </div>
-          <button @click="downloadResults" class="btn-lg btn-success m-3">Download Results</button>
         </div>
-
       </div>
 
     </div>
