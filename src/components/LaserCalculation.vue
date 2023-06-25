@@ -140,13 +140,16 @@
             <div class="col"><strong>{{ costOfCutIns }}</strong></div>
           </div>
         </div>
+        <button @click="downloadResults" class="btn-lg btn-success m-3">Download Results</button>
       </div>
+
     </div>
   </div>
 </template>
 
 <script>
 import costs from "@/repository/costs";
+import * as XLSX from "xlsx";
 export default {
   name: 'LaserCalculation',
   props: {
@@ -234,6 +237,28 @@ export default {
       if (this[field].startsWith('0')) {
         this[field] = this[field].replace(/^0+/, '');
       }
+    },
+    downloadResults() {
+      const wb = XLSX.utils.book_new();
+      const wsData = [
+        ['Weight', this.weight + ' kg'],
+        ['Cut-in quantity', this.cutInQuantity],
+        ['Cut length', this.cutLength],
+        ['Cost of cut', this.currentCostOfCut],
+        ['Cost of cut-ins', this.costOfCutIns]
+      ];
+      const ws = XLSX.utils.aoa_to_sheet(wsData);
+      XLSX.utils.book_append_sheet(wb, ws, 'Results');
+      const wbOptions = { bookType: 'xlsx', type: 'array' };
+      const excelData = XLSX.write(wb, wbOptions);
+      const blob = new Blob([excelData], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'results.xlsx');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
   },
   mounted() {
