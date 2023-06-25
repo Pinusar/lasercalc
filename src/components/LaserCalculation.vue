@@ -118,7 +118,7 @@
         <h1>Results</h1>
           <div class="row bg-info border-bottom-dark">
             <div class="col">Weight</div>
-            <div class="col"><strong>{{ weight }}</strong> kg</div>
+            <div class="col"><strong>{{ weight }}</strong></div>
           </div>
           <div class="row bg-info border-bottom-dark">
             <div class="col">Cut-in quantity</div>
@@ -126,7 +126,7 @@
           </div>
           <div class="row bg-info border-bottom-dark">
             <div class="col">Cut length</div>
-            <div class="col"><strong>{{ cutLength }}</strong></div>
+            <div class="col"><strong>{{ cutLength * 1000}}</strong></div>
           </div>
           <div class="row bg-info border-bottom-dark">
             <div class="col">Cost of cut</div>
@@ -169,7 +169,7 @@ export default {
   },
   computed: {
     perimeter() {
-      return this.length * 2 + this.width * 2 / 1000
+      return (this.length * 2 + this.width * 2) / 1000
     },
     weight() {
       return Math.round(this.volume * this.density) / 1000;
