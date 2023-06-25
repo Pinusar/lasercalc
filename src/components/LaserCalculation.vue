@@ -105,7 +105,8 @@
       </div>
 
       <div class="col-md-6">
-        <h1>Cut-ins</h1>
+        <div class="col-md-6 m-auto">
+          <h1>Cut-ins</h1>
           <div class="row bg-warning border-bottom-dark">
             <div class="col">Cut-in type</div>
             <div class="col"><strong>width</strong> mm</div>
@@ -118,7 +119,10 @@
             <div class="col"><strong>{{ cutIn.length }}</strong> mm</div>
             <div class="col"><strong>{{ cutIn.radius }}</strong> mm</div>
           </div>
-        <h1>Results</h1>
+        </div>
+
+        <div class="col-md-6 m-auto">
+          <h1>Results</h1>
           <div class="row bg-info border-bottom-dark">
             <div class="col">Weight</div>
             <div class="col"><strong>{{ weight }}</strong></div>
@@ -128,8 +132,8 @@
             <div class="col"><strong>{{ cutInQuantity }}</strong></div>
           </div>
           <div class="row bg-info border-bottom-dark">
-            <div class="col">Cut length</div>
-            <div class="col"><strong>{{ cutLength * 1000}}</strong></div>
+            <div class="col">Cut length (m)</div>
+            <div class="col"><strong>{{ cutLength }}</strong></div>
           </div>
           <div class="row bg-info border-bottom-dark">
             <div class="col">Cost of cut</div>
@@ -139,7 +143,9 @@
             <div class="col">Cost of cut-ins</div>
             <div class="col"><strong>{{ costOfCutIns }}</strong></div>
           </div>
-        <button @click="downloadResults" class="btn-lg btn-success m-3">Download Results</button>
+          <button @click="downloadResults" class="btn-lg btn-success m-3">Download Results</button>
+        </div>
+
       </div>
 
     </div>
