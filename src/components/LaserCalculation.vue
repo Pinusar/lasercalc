@@ -16,21 +16,21 @@
         <div class="form-group row mt-3">
           <label for="length" class="col-sm-2 col-form-label">Length (mm)</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text" v-model="length" id="length" @input="removePrecedingZero('length')">
+            <input class="form-control" type="text" v-model="length" id="length" @input="removePrecedingZero('length')" inputmode="numeric">
           </div>
         </div>
 
         <div class="form-group row ">
           <label for="width" class="col-sm-2 col-form-label">Width (mm)</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text" id="width" v-model="width" @input="removePrecedingZero('width')">
+            <input class="form-control" type="text" id="width" v-model="width" @input="removePrecedingZero('width')" inputmode="numeric">
           </div>
         </div>
 
         <div class="form-group row ">
           <label for="thickness" class="col-sm-2 col-form-label">Thickness (mm)</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text" id="thickness" v-model="thickness" @input="removePrecedingZero('thickness')">
+            <input class="form-control" type="text" id="thickness" v-model="thickness" @input="removePrecedingZero('thickness')" inputmode="numeric">
           </div>
         </div>
 
@@ -51,13 +51,13 @@
           <div class="form-group row mt-3">
             <label for="cutInLength" class="col-sm-2 col-form-label">Length (mm)</label>
             <div class="col-sm-10">
-              <input class="form-control" type="text" v-model="cutInLength" id="cutInLength" @input="removePrecedingZero('cutInLength')">
+              <input class="form-control" type="text" v-model="cutInLength" id="cutInLength" @input="removePrecedingZero('cutInLength')" inputmode="numeric">
             </div>
           </div>
           <div class="form-group row mt-3">
             <label for="cutInWidth" class="col-sm-2 col-form-label">Width (mm)</label>
             <div class="col-sm-10">
-              <input class="form-control" type="text" v-model="cutInWidth" id="cutInWidth" @input="removePrecedingZero('cutInWidth')">
+              <input class="form-control" type="text" v-model="cutInWidth" id="cutInWidth" @input="removePrecedingZero('cutInWidth')" inputmode="numeric">
             </div>
           </div>
         </div>
@@ -65,7 +65,7 @@
           <div class="form-group row mt-3">
             <label for="cutInRadius" class="col-sm-2 col-form-label">Radius (mm)</label>
             <div class="col-sm-10">
-              <input class="form-control" type="text" v-model="cutInRadius" id="cutInRadius" @input="removePrecedingZero('cutInRadius')">
+              <input class="form-control" type="text" v-model="cutInRadius" id="cutInRadius" @input="removePrecedingZero('cutInRadius')" inputmode="numeric">
             </div>
           </div>
         </div>
@@ -73,7 +73,7 @@
         <div class="form-group row mt-3">
           <label for="currentCutInQuantity" class="col-sm-2 col-form-label">pcs</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text" v-model="currentCutInQuantity" id="currentCutInQuantity" @input="removePrecedingZero('currentCutInQuantity')">
+            <input class="form-control" type="text" v-model="currentCutInQuantity" id="currentCutInQuantity" @input="removePrecedingZero('currentCutInQuantity')" inputmode="numeric">
           </div>
         </div>
         <button @click="addCutIn" class="btn-lg btn-primary m-2">Add</button>
