@@ -137,11 +137,15 @@
           </div>
           <div class="row bg-info border-bottom-dark">
             <div class="col">Cost of cut</div>
-            <div class="col"><strong>{{ currentCostOfCut }}</strong></div>
+            <div class="col"><strong>{{ currentCostOfCut.toFixed(2) }}</strong></div>
           </div>
           <div class="row bg-info border-bottom-dark">
             <div class="col">Cost of cut-ins</div>
-            <div class="col"><strong>{{ costOfCutIns }}</strong></div>
+            <div class="col"><strong>{{ costOfCutIns.toFixed(2) }}</strong></div>
+          </div>
+          <div class="row bg-info border-bottom-dark">
+            <div class="col">Total cost</div>
+            <div class="col"><strong>{{ totalCost.toFixed(2) }}</strong></div>
           </div>
           <button @click="downloadResults" class="btn-lg btn-success m-3">Download Results</button>
         </div>
@@ -208,14 +212,18 @@ export default {
       return cost?.small ?? 0
     },
     currentCostOfCut() {
-      return Math.round(this.currentCostOfCutPerMeter * this.cutLength) / 100
+      return (this.currentCostOfCutPerMeter * this.cutLength)
     },
     costOfCutIns() {
       if (this.thickness === 0) {
         return 0
       }
       let cost = this.costDataForSelectedMaterial.filter(c => c.thickness == this.thickness)[0]
-      return (cost?.cutting ?? 0) * this.cutInQuantity
+      let result = (cost?.cutting ?? 0) * this.cutInQuantity;
+      return result
+    },
+    totalCost() {
+      return this.currentCostOfCut + this.costOfCutIns
     }
   },
   methods: {
