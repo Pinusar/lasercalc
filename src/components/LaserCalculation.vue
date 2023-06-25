@@ -34,6 +34,13 @@
           </div>
         </div>
 
+        <div class="form-group row ">
+          <label for="costOfMaterialPerKg" class="col-sm-2 col-form-label">Material cost (per kg)</label>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" id="costOfMaterialPerKg" v-model="costOfMaterialPerKg" @input="removePrecedingZero('costOfMaterialPerKg')" inputmode="numeric">
+          </div>
+        </div>
+
         <br>
       </div>
 
@@ -144,6 +151,10 @@
             <div class="col"><strong>{{ costOfCutIns.toFixed(2) }}</strong></div>
           </div>
           <div class="row bg-info border-bottom-dark">
+            <div class="col">Cost of material</div>
+            <div class="col"><strong>{{ costOfMaterial.toFixed(2) }}</strong></div>
+          </div>
+          <div class="row bg-info border-bottom-dark">
             <div class="col">Total cost</div>
             <div class="col"><strong>{{ totalCost.toFixed(2) }}</strong></div>
           </div>
@@ -179,7 +190,8 @@ export default {
       cutInRadius: 0,
       currentCutInQuantity: 0,
       cutIns: [],
-      costOfCutData: costs
+      costOfCutData: costs,
+      costOfMaterialPerKg: 0,
     }
   },
   computed: {
@@ -222,8 +234,11 @@ export default {
       let result = (cost?.cutting ?? 0) * this.cutInQuantity;
       return result
     },
+    costOfMaterial() {
+      return this.costOfMaterialPerKg * this.weight
+    },
     totalCost() {
-      return this.currentCostOfCut + this.costOfCutIns
+      return this.currentCostOfCut + this.costOfCutIns + this.costOfMaterial
     }
   },
   methods: {
