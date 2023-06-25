@@ -103,7 +103,6 @@
 
       <div class="col-md-6">
         <h1>Cut-ins</h1>
-        <div class="w-50 m-auto">
           <div class="row bg-warning border-bottom-dark">
             <div class="col">Cut-in type</div>
             <div class="col"><strong>width</strong> mm</div>
@@ -116,9 +115,7 @@
             <div class="col"><strong>{{ cutIn.length }}</strong> mm</div>
             <div class="col"><strong>{{ cutIn.radius }}</strong> mm</div>
           </div>
-        </div>
         <h1>Results</h1>
-        <div class="w-50 m-auto">
           <div class="row bg-info border-bottom-dark">
             <div class="col">Weight</div>
             <div class="col"><strong>{{ weight }}</strong> kg</div>
@@ -139,7 +136,6 @@
             <div class="col">Cost of cut-ins</div>
             <div class="col"><strong>{{ costOfCutIns }}</strong></div>
           </div>
-        </div>
         <button @click="downloadResults" class="btn-lg btn-success m-3">Download Results</button>
       </div>
 
