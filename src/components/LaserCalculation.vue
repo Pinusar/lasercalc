@@ -3,7 +3,7 @@
     <div class="row">
 
 <!--      ITEM-->
-      <div class="col-6 mb-5">
+      <div class="col-md-6 mb-5">
         <h1>Item</h1>
 
         <select v-model="material" class="form-select">
@@ -38,7 +38,7 @@
       </div>
 
 <!--      CUT-INS-->
-      <div class="col-6">
+      <div class="col-md-6">
         <h1>Add cut-in</h1>
         <select v-model="cutInType" class="form-select">
           <option>Circle</option>
@@ -78,7 +78,7 @@
     </div>
 
     <div class="row">
-      <div class="col-6">
+      <div class="col-md-6">
         <div class="card">
           <div class="card-body">
             <h1>Costs</h1>
@@ -101,7 +101,7 @@
         </div>
       </div>
 
-      <div class="col-6">
+      <div class="col-md-6">
         <h1>Cut-ins</h1>
         <div class="w-50 m-auto">
           <div class="row bg-warning border-bottom-dark">
