@@ -106,7 +106,7 @@ export default {
             "cutting": 0.30
         }
     ],
-    "Chromed steel" : [
+    "Stainless steel" : [
         {
             "thickness": "0,2-0,5",
             "small": 0.90,

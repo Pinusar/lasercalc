@@ -8,7 +8,7 @@
 
         <select v-model="material" class="form-select">
           <option>Carbon steel</option>
-          <option>Chromed steel</option>
+          <option>Stainless steel</option>
           <option>Aluminum</option>
           <option>Copper</option>
         </select>
@@ -41,7 +41,7 @@
       <div class="col-md-6">
         <h1>Add cut-in</h1>
         <select v-model="cutInType" class="form-select">
-          <option>Circle</option>
+          <option>Round</option>
           <option>Square</option>
         </select>
         <div v-if="cutInType === 'Square'">
@@ -68,7 +68,7 @@
         </div>
 
         <div class="form-group row mt-3">
-          <label for="currentCutInQuantity" class="col-sm-2 col-form-label">Quantity</label>
+          <label for="currentCutInQuantity" class="col-sm-2 col-form-label">pcs</label>
           <div class="col-sm-10">
             <input class="form-control" type="text" v-model="currentCutInQuantity" id="currentCutInQuantity" @input="removePrecedingZero('currentCutInQuantity')">
           </div>
