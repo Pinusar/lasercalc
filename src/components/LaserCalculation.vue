@@ -120,16 +120,8 @@
         <h1>Results</h1>
         <div class="w-50 m-auto">
           <div class="row bg-info border-bottom-dark">
-            <div class="col">Volume</div>
-            <div class="col"><strong>{{ volume }}</strong> mm3</div>
-          </div>
-          <div class="row bg-info border-bottom-dark">
             <div class="col">Weight</div>
             <div class="col"><strong>{{ weight }}</strong> kg</div>
-          </div>
-          <div class="row bg-info border-bottom-dark">
-            <div class="col">Perimeter</div>
-            <div class="col"><strong>{{ perimeter }}</strong> m</div>
           </div>
           <div class="row bg-info border-bottom-dark">
             <div class="col">Cut-in quantity</div>
