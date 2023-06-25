@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
     <div class="row">
+
+<!--      ITEM-->
       <div class="col-6 mb-5">
         <h1>Item</h1>
 
@@ -35,6 +37,7 @@
         <br>
       </div>
 
+<!--      CUT-INS-->
       <div class="col-6">
         <h1>Add cut-in</h1>
         <select v-model="cutInType" class="form-select">
@@ -42,18 +45,34 @@
           <option>Square</option>
         </select>
         <div v-if="cutInType === 'Square'">
-          <p>Length</p>
-          <input v-model="cutInLength" class="form-control" type="number">
-          <p>Width</p>
-          <input v-model="cutInWidth" class="form-control" type="number">
+          <div class="form-group row mt-3">
+            <label for="cutInLength" class="col-sm-2 col-form-label">Length (mm)</label>
+            <div class="col-sm-10">
+              <input class="form-control" type="text" v-model="cutInLength" id="cutInLength" @input="removePrecedingZero('cutInLength')">
+            </div>
+          </div>
+          <div class="form-group row mt-3">
+            <label for="cutInWidth" class="col-sm-2 col-form-label">Width (mm)</label>
+            <div class="col-sm-10">
+              <input class="form-control" type="text" v-model="cutInWidth" id="cutInWidth" @input="removePrecedingZero('cutInWidth')">
+            </div>
+          </div>
         </div>
         <div v-else-if="cutInType === 'Circle'">
-          <p>Radius</p>
-          <input v-model="cutInRadius" class="form-control" type="number">
+          <div class="form-group row mt-3">
+            <label for="cutInRadius" class="col-sm-2 col-form-label">Radius (mm)</label>
+            <div class="col-sm-10">
+              <input class="form-control" type="text" v-model="cutInRadius" id="cutInRadius" @input="removePrecedingZero('cutInRadius')">
+            </div>
+          </div>
         </div>
 
-        <p>Quantity</p>
-        <input class="form-control" type="number">
+        <div class="form-group row mt-3">
+          <label for="cutInWidth" class="col-sm-2 col-form-label">Quantity</label>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" v-model="cutInWidth" id="cutInWidth" @input="removePrecedingZero('cutInWidth')">
+          </div>
+        </div>
         <button @click="addCutIn" class="btn-lg btn-primary m-2">Add</button>
       </div>
     </div>
