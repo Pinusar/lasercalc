@@ -172,10 +172,11 @@ export default {
       return this.length * 2 + this.width * 2 / 1000
     },
     weight() {
-      return Math.round(this.volume / 1000 * this.density) / 100
+      return Math.round(this.volume * this.density) / 1000;
     },
+    // in cm3
     volume() {
-      return this.length * this.width * this.thickness
+      return this.length / 10 * this.width / 10 * this.thickness / 10
     },
     cutInQuantity() {
       return this.cutIns.length + 1
