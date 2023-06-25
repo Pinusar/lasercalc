@@ -61,7 +61,7 @@
             </div>
           </div>
         </div>
-        <div v-else-if="cutInType === 'Circle'">
+        <div v-else-if="cutInType === 'Round'">
           <div class="form-group row mt-3">
             <label for="cutInRadius" class="col-sm-2 col-form-label">Radius (mm)</label>
             <div class="col-sm-10">
