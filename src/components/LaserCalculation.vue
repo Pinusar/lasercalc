@@ -12,13 +12,13 @@
         </select>
 
         <label>Length (mm)</label>
-        <input class="form-control" type="number" v-model="length">
+        <input class="form-control" type="text" v-model="length" @input="removePrecedingZero('length')">
 
-        <p>Width (mm)</p>
-        <input class="form-control" type="number" v-model="width">
+        <label>Width (mm)</label>
+        <input class="form-control" type="text" v-model="width" @input="removePrecedingZero('width')">
 
-        <p>Thickness (mm)</p>
-        <input class="form-control" type="number" v-model="thickness">
+        <label>Thickness (mm)</label>
+        <input class="form-control" type="text" v-model="thickness" @input="removePrecedingZero('thickness')">
 
         <br>
       </div>
@@ -211,6 +211,11 @@ export default {
     getCirclePerimeter(radius) {
       return Math.round(Math.PI * radius * 2 * 100) / 100
     },
+    removePrecedingZero(field) {
+      if (this[field].startsWith('0')) {
+        this[field] = this[field].replace(/^0+/, '');
+      }
+    }
   },
   mounted() {
     this.costOfCutData = costs
