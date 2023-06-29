@@ -287,10 +287,23 @@ export default {
         ['Cut-in quantity', this.cutInQuantity],
         ['Cut length', this.cutLength],
         ['Cost of cut', this.currentCostOfCut],
-        ['Cost of cut-ins', this.costOfCutIns]
+        ['Cost of cut-ins', this.costOfCutIns],
+        ['', ''], // Empty row for spacing
+        ['Total', '=SUM(D2:E2) * 2'] // Formula for the wow effect
       ];
       const ws = XLSX.utils.aoa_to_sheet(wsData);
       XLSX.utils.book_append_sheet(wb, ws, 'Results');
+
+      // Creating the "Cut-ins" sheet
+      const cutInsData = [
+        ['Cut-in ID', 'Length', 'Width'],
+        [1, 10, 5],
+        [2, 8, 3],
+        [3, 15, 7]
+      ];
+      const cutInsSheet = XLSX.utils.aoa_to_sheet(cutInsData);
+      XLSX.utils.book_append_sheet(wb, cutInsSheet, 'Cut-ins');
+
       const wbOptions = { bookType: 'xlsx', type: 'array' };
       const excelData = XLSX.write(wb, wbOptions);
       const blob = new Blob([excelData], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
