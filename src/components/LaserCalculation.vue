@@ -289,7 +289,7 @@ export default {
         ['Cost of cut', this.currentCostOfCut],
         ['Cost of cut-ins', this.costOfCutIns],
         ['', ''], // Empty row for spacing
-        ['Total', '=SUM(D2:E2) * 2'] // Formula for the wow effect
+        ['Total', '=SUM(B4:B5)'] // Formula for the wow effect
       ];
       const ws = XLSX.utils.aoa_to_sheet(wsData);
       XLSX.utils.book_append_sheet(wb, ws, 'Results');
