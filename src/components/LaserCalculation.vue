@@ -180,9 +180,10 @@
 
 <script>
 import costs from "@/repository/costs";
-import * as XLSX from "xlsx";
 import circleIcon from '@/assets/img/circle.png';
 import squareIcon from '@/assets/img/square.png';
+import downloadExcel from "@/service/excelService";
+
 export default {
   name: 'LaserCalculation',
   props: {
@@ -286,7 +287,6 @@ export default {
       }
     },
     downloadResults() {
-      const wb = XLSX.utils.book_new();
       const wsData = [
         ['Weight', this.weight + ' kg'],
         ['Cut-in quantity', this.cutInQuantity],
@@ -294,31 +294,15 @@ export default {
         ['Cost of cut', this.currentCostOfCut],
         ['Cost of cut-ins', this.costOfCutIns],
         ['', ''], // Empty row for spacing
-        ['Total', '=SUM(B4:B5)'] // Formula for the wow effect
+        ['Total', { t: 'n', f: '=SUM(B4:B5)', s: { font: { bold: true } }}] // Formula for the wow effect
       ];
-      const ws = XLSX.utils.aoa_to_sheet(wsData);
-      XLSX.utils.book_append_sheet(wb, ws, 'Results');
-
-      // Creating the "Cut-ins" sheet
       const cutInsData = [
         ['Cut-in ID', 'Length', 'Width'],
         [1, 10, 5],
         [2, 8, 3],
         [3, 15, 7]
       ];
-      const cutInsSheet = XLSX.utils.aoa_to_sheet(cutInsData);
-      XLSX.utils.book_append_sheet(wb, cutInsSheet, 'Cut-ins');
-
-      const wbOptions = { bookType: 'xlsx', type: 'array' };
-      const excelData = XLSX.write(wb, wbOptions);
-      const blob = new Blob([excelData], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.setAttribute('download', 'results.xlsx');
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      downloadExcel(wsData, cutInsData);
     },
     getIcon() {
       return this.cutInType === 'Square' ? squareIcon : circleIcon
