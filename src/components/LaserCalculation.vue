@@ -222,7 +222,7 @@ export default {
     cutLength() {
       return this.perimeter + this.cutIns.reduce( (result, cutIn) => cutIn.type === 'Square' ?
           result + this.getSquarePerimeter(cutIn.width, cutIn.length)
-          : result + this.getCirclePerimeter(cutIn.radius), 0)
+          : result + this.getCirclePerimeter(cutIn.radius), 0).toFixed(2);
     },
     costDataForSelectedMaterial() {
       return this.costOfCutData[this.material];
