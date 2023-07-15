@@ -194,7 +194,6 @@ export default {
       length: 0,
       width: 0,
       thickness: 0,
-      density: 7.85,
       cutInType: 'Square',
       cutInLength: 0,
       cutInWidth: 0,
@@ -210,7 +209,7 @@ export default {
       return (this.length * 2 + this.width * 2) / 1000
     },
     weight() {
-      return Math.round(this.volume * this.density) / 1000;
+      return Math.round(this.volume * this.densityForSelectedMaterial) / 1000;
     },
     // in cm3
     volume() {
@@ -224,8 +223,14 @@ export default {
           result + this.getSquarePerimeter(cutIn.width, cutIn.length)
           : result + this.getCirclePerimeter(cutIn.radius), 0).toFixed(2);
     },
+    dataForSelectedMaterial() {
+      return this.costOfCutData[this.material]
+    },
     costDataForSelectedMaterial() {
-      return this.costOfCutData[this.material];
+      return this.dataForSelectedMaterial.costs;
+    },
+    densityForSelectedMaterial() {
+      return this.dataForSelectedMaterial.density
     },
     currentCostOfCutPerMeter() {
       if (this.thickness === 0) {
