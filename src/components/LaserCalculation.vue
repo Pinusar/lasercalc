@@ -275,7 +275,7 @@ export default {
       this.currentCutInQuantity = 0;
     },
     getSquarePerimeter(width, length) {
-      return 2 * width + 2 * length / 1000
+      return (2 * width + 2 * length) / 1000
     },
     getCirclePerimeter(radius) {
       return (Math.round(Math.PI * radius * 2 * 100) / 100) / 1000
