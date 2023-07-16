@@ -93,7 +93,6 @@
     <div class="row">
       <CostData :cost-data="costDataForSelectedMaterial" />
 
-
       <div class="col-md-6">
         <div class="card bg-warning">
           <div class="card-body">
@@ -137,6 +136,7 @@ import CostData from "@/components/CostData.vue";
 
 
 import Results from "@/components/Results.vue";
+import {getCirclePerimeter, getSquarePerimeter} from "@/service/geometryService";
 
 export default {
   name: 'LaserCalculation',
@@ -177,7 +177,7 @@ export default {
     cutLength() {
       return this.perimeter + this.cutIns.reduce( (result, cutIn) => cutIn.type === 'Square' ?
           result + this.getSquarePerimeter(cutIn.width, cutIn.length)
-          : result + this.getCirclePerimeter(cutIn.radius), 0).toFixed(2);
+          : result + this.getCirclePerimeter(cutIn.radius), 0);
     },
     dataForSelectedMaterial() {
       return this.costOfCutData[this.material]
@@ -228,10 +228,10 @@ export default {
       this.currentCutInQuantity = 0;
     },
     getSquarePerimeter(width, length) {
-      return (2 * width + 2 * length) / 1000
+      return getSquarePerimeter(width, length) / 1000
     },
     getCirclePerimeter(radius) {
-      return (Math.round(Math.PI * radius * 2 * 100) / 100) / 1000
+      return getCirclePerimeter(radius) / 1000
     },
     removePrecedingZero(field) {
       if (this[field].startsWith('0')) {
