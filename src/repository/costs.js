@@ -3,14 +3,14 @@ export default {
         density: 7.85,
         costs:  [
             {
-                "thickness": "0.2-0.5",
+                "thickness": "0.5",
                 "small": 0.78,
                 "medium": 0.60,
                 "large": 0.53,
                 "cutting": 0.03
             },
             {
-                "thickness": "0.6-1",
+                "thickness": "1",
                 "small": 1.05,
                 "medium": 0.75,
                 "large": 0.68,
@@ -113,14 +113,14 @@ export default {
         density: 7.9,
         costs: [
             {
-                "thickness": "0,2-0,5",
+                "thickness": "0.5",
                 "small": 0.90,
                 "medium": 0.75,
                 "large": 0.73,
                 "cutting": 0.04
             },
             {
-                "thickness": "0,6-1",
+                "thickness": "1",
                 "small": 1.18,
                 "medium": 1.05,
                 "large": 0.88,
@@ -188,14 +188,14 @@ export default {
         density: 2.7,
         costs: [
             {
-                "thickness": "0,2-0,5",
+                "thickness": "0.5",
                 "small": 0.90,
                 "medium": 0.75,
                 "large": 0.73,
                 "cutting": 0.04
             },
             {
-                "thickness": "0,6-1",
+                "thickness": "1",
                 "small": 1.18,
                 "medium": 1.05,
                 "large": 0.88,
@@ -256,14 +256,14 @@ export default {
         density: 8.96,
         costs: [
             {
-                "thickness": "0,2-0,5",
+                "thickness": "0.5",
                 "small": 0.90,
                 "medium": 0.75,
                 "large": 0.73,
                 "cutting": 0.04
             },
             {
-                "thickness": "0,6-1",
+                "thickness": "1",
                 "small": 1.18,
                 "medium": 1.05,
                 "large": 0.88,
