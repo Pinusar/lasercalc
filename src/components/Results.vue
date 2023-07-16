@@ -13,7 +13,7 @@
         </div>
         <div class="row bg-info border-bottom-dark">
           <div class="col">Cut length (m)</div>
-          <div class="col"><strong>{{ cutLength }}</strong></div>
+          <div class="col"><strong>{{ cutLength.toFixed(2) }}</strong></div>
         </div>
         <div class="row bg-info border-bottom-dark">
           <div class="col">Cost of cut</div>
