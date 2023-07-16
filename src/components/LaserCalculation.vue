@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div>
     <div class="row">
 
 <!--      ITEM-->
@@ -133,7 +133,6 @@
 import materialData from "@/repository/costs";
 import circleIcon from '@/assets/img/circle.png';
 import squareIcon from '@/assets/img/square.png';
-import downloadExcel from "@/service/excelService";
 import CostData from "@/components/CostData.vue";
 
 
