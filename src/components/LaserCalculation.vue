@@ -91,28 +91,7 @@
     </div>
 
     <div class="row">
-      <div class="d-none d-md-block col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <h1>Costs</h1>
-            <div class="row border-bottom-dark">
-              <div class="col">Thickness</div>
-              <div class="col"><strong>small</strong> </div>
-              <div class="col"><strong>medium</strong> </div>
-              <div class="col"><strong>large</strong> </div>
-              <div class="col"><strong>cutting</strong> </div>
-            </div>
-            <div v-for="(cost, index) in costDataForSelectedMaterial" :key="index" class="row border-bottom-dark">
-              <div class="col">{{ cost.thickness }}</div>
-              <div class="col"><strong>{{ cost.small }}</strong></div>
-              <div class="col"><strong>{{ cost.medium }}</strong></div>
-              <div class="col"><strong>{{ cost.large }}</strong></div>
-              <div class="col"><strong>{{ cost.cutting }}</strong></div>
-            </div>
-          </div>
-
-        </div>
-      </div>
+      <CostData :cost-data="costDataForSelectedMaterial" />
 
 
       <div class="col-md-6">
@@ -136,42 +115,14 @@
           </div>
         </div>
 
-        <div class="col-md-6 m-auto">
-          <div class="card bg-info mt-3">
-            <div class="card-body">
-              <h1>Results</h1>
-              <div class="row bg-info border-bottom-dark">
-                <div class="col">Weight</div>
-                <div class="col"><strong>{{ weight }}</strong></div>
-              </div>
-              <div class="row bg-info border-bottom-dark">
-                <div class="col">Cut-in quantity</div>
-                <div class="col"><strong>{{ cutInQuantity }}</strong></div>
-              </div>
-              <div class="row bg-info border-bottom-dark">
-                <div class="col">Cut length (m)</div>
-                <div class="col"><strong>{{ cutLength }}</strong></div>
-              </div>
-              <div class="row bg-info border-bottom-dark">
-                <div class="col">Cost of cut</div>
-                <div class="col"><strong>{{ currentCostOfCut.toFixed(2) }}</strong></div>
-              </div>
-              <div class="row bg-info border-bottom-dark">
-                <div class="col">Cost of cut-ins</div>
-                <div class="col"><strong>{{ costOfCutIns.toFixed(2) }}</strong></div>
-              </div>
-              <div class="row bg-info border-bottom-dark">
-                <div class="col">Cost of material</div>
-                <div class="col"><strong>{{ costOfMaterial.toFixed(2) }}</strong></div>
-              </div>
-              <div class="row bg-primary text-white border-bottom-dark">
-                <div class="col">Total cost</div>
-                <div class="col"><strong>{{ totalCost.toFixed(2) }}</strong></div>
-              </div>
-              <button @click="downloadResults" class="btn-lg btn-success m-3">Download Results</button>
-            </div>
-          </div>
-        </div>
+        <Results
+            :weight="weight"
+            :cut-in-quantity="cutInQuantity"
+            :cut-length="cutLength"
+            :cost-of-cut="currentCostOfCut"
+            :cost-of-cut-ins="costOfCutIns"
+            :cost-of-material="costOfMaterial"
+        />
       </div>
 
     </div>
@@ -183,9 +134,14 @@ import materialData from "@/repository/costs";
 import circleIcon from '@/assets/img/circle.png';
 import squareIcon from '@/assets/img/square.png';
 import downloadExcel from "@/service/excelService";
+import CostData from "@/components/CostData.vue";
+
+
+import Results from "@/components/Results.vue";
 
 export default {
   name: 'LaserCalculation',
+  components: {Results, CostData},
   props: {
     msg: String
   },
@@ -254,9 +210,6 @@ export default {
     costOfMaterial() {
       return this.costOfMaterialPerKg * this.weight
     },
-    totalCost() {
-      return this.currentCostOfCut + this.costOfCutIns + this.costOfMaterial
-    }
   },
   methods: {
     addCutIn() {
@@ -286,24 +239,7 @@ export default {
         this[field] = this[field].replace(/^0+/, '');
       }
     },
-    downloadResults() {
-      const wsData = [
-        ['Weight', this.weight + ' kg'],
-        ['Cut-in quantity', this.cutInQuantity],
-        ['Cut length', this.cutLength],
-        ['Cost of cut', this.currentCostOfCut],
-        ['Cost of cut-ins', this.costOfCutIns],
-        ['', ''], // Empty row for spacing
-        ['Total', { t: 'n', f: '=SUM(B4:B5)', s: { font: { bold: true } }}] // Formula for the wow effect
-      ];
-      const cutInsData = [
-        ['Cut-in ID', 'Length', 'Width'],
-        [1, 10, 5],
-        [2, 8, 3],
-        [3, 15, 7]
-      ];
-      downloadExcel(wsData, cutInsData);
-    },
+
     getIcon() {
       return this.cutInType === 'Square' ? squareIcon : circleIcon
     }
