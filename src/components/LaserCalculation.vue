@@ -175,9 +175,10 @@ export default {
       return this.cutIns.length + 1
     },
     cutLength() {
-      return this.perimeter + this.cutIns.reduce( (result, cutIn) => cutIn.type === 'Square' ?
+      const length = this.perimeter + this.cutIns.reduce( (result, cutIn) => cutIn.type === 'Square' ?
           result + this.getSquarePerimeter(cutIn.width, cutIn.length)
           : result + this.getCirclePerimeter(cutIn.radius), 0);
+      return Number(length.toFixed(2));
     },
     dataForSelectedMaterial() {
       return this.costOfCutData[this.material]
