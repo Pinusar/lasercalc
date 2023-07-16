@@ -179,7 +179,7 @@
 </template>
 
 <script>
-import costs from "@/repository/costs";
+import materialData from "@/repository/costs";
 import circleIcon from '@/assets/img/circle.png';
 import squareIcon from '@/assets/img/square.png';
 import downloadExcel from "@/service/excelService";
@@ -201,7 +201,7 @@ export default {
       cutInRadius: 0,
       currentCutInQuantity: 0,
       cutIns: [],
-      costOfCutData: costs,
+      costOfCutData: materialData,
       costOfMaterialPerKg: 0,
     }
   },
@@ -309,7 +309,7 @@ export default {
     }
   },
   mounted() {
-    this.costOfCutData = costs
+    this.costOfCutData = materialData
   }
 }
 </script>
