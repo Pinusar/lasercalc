@@ -1,6 +1,8 @@
 export default {
     "Carbon steel" : {
         density: 7.85,
+        gas: "O2",
+        nozzleType: "S",
         costs:  [
             {
                 "thickness": "0.5",
@@ -111,6 +113,8 @@ export default {
     },
     "Stainless steel" : {
         density: 7.9,
+        gas: "N2",
+        nozzleType: "D",
         costs: [
             {
                 "thickness": "0.5",
@@ -186,6 +190,8 @@ export default {
     },
     "Aluminum" : {
         density: 2.7,
+        gas: "N2",
+        nozzleType: "D",
         costs: [
             {
                 "thickness": "0.5",
@@ -254,6 +260,8 @@ export default {
     },
     "Copper" : {
         density: 8.96,
+        gas: "N2",
+        nozzleType: "D",
         costs: [
             {
                 "thickness": "0.5",
