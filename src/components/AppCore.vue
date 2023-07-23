@@ -80,7 +80,9 @@
         <footer class="sticky-footer bg-white">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
-              <span>Copyright &copy; Martin 2023</span>
+              <img :src="getLogo()" alt="Logo" class="logo"/>
+              <br>
+              <span>Copyright &copy; MBH Metalcut OÜ 2023</span>
             </div>
           </div>
         </footer>
@@ -102,12 +104,22 @@
 
 <script>
 
+import logo from '@/assets/img/logo.png';
+
 export default {
   name: 'AppCore',
   emits: ['updated'],
+  methods: {
+    getLogo() {
+      return logo;
+    }
+  }
 }
 </script>
 <style>
 @import "./css/sb-admin-2.min.css";
+.logo {
+  max-height: 100px;
+}
 </style>
 
