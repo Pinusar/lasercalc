@@ -1,5 +1,5 @@
 <template>
-  <section class="intro mb-5 col-md-6">
+  <section class="intro my-3">
     <div class="bg-image" style="background-color: #f5f7fa;">
       <div class="mask d-flex align-items-center h-100">
         <div class="container">

@@ -1,5 +1,5 @@
 <template>
-  <div class="col-md-6 m-auto">
+  <div class="m-auto">
     <div class="card bg-info mt-3">
       <div class="card-body">
         <h1>Results</h1>

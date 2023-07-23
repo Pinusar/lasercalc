@@ -1,5 +1,5 @@
 <template>
-  <div class="d-none d-md-block col-md-6">
+  <div class="d-none d-md-block">
     <div class="card">
       <div class="card-body">
         <h1>Costs</h1>

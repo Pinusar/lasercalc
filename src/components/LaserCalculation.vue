@@ -87,17 +87,7 @@
           </div>
         </div>
         <button @click="addCutIn" class="btn-lg btn-primary m-2">Add</button>
-      </div>
-    </div>
 
-    <div class="row">
-      <NozzleInfo :gas="gas" :nozzle-diameter="nozzleDiameter" :nozzle-type="nozzleType" />
-
-      <div class="col-md-6">.</div>
-
-      <CostData :cost-data="costDataForSelectedMaterial" />
-
-      <div class="col-md-6">
         <div class="card bg-warning">
           <div class="card-body">
             <div class="col-md-6 m-auto">
@@ -117,6 +107,21 @@
             </div>
           </div>
         </div>
+      </div>
+
+
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-md-6">
+        <NozzleInfo :gas="gas" :nozzle-diameter="nozzleDiameter" :nozzle-type="nozzleType" />
+        <CostData :cost-data="costDataForSelectedMaterial" />
+      </div>
+
+      <div class="col-md-6">
+
 
         <Results
             :weight="weight"
