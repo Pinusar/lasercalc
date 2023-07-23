@@ -44,69 +44,90 @@
         <br>
       </div>
 
+
+
 <!--      CUT-INS-->
       <div class="col-md-6">
-          <div class="d-flex justify-content-center align-items-center">
-            <div class="d-flex">
-              <h1>Add cut-in</h1>
-              <img :src="getIcon()" alt="Icon" class="icon ml-2" />
-            </div>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Add cut-ins
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <div class="d-flex justify-content-center align-items-center">
+                  <div class="d-flex">
+                    <h1>Add cut-in</h1>
+                    <img :src="getIcon()" alt="Icon" class="icon ml-2"/>
+                  </div>
 
-          </div>
-        <select v-model="cutInType" class="form-select">
-          <option>Round</option>
-          <option>Square</option>
-        </select>
-        <div v-if="cutInType === 'Square'">
-          <div class="form-group row mt-3">
-            <label for="cutInLength" class="col-sm-2 col-form-label">Length (mm)</label>
-            <div class="col-sm-10">
-              <input class="form-control" type="text" v-model="cutInLength" id="cutInLength" @input="removePrecedingZero('cutInLength')" inputmode="numeric">
-            </div>
-          </div>
-          <div class="form-group row mt-3">
-            <label for="cutInWidth" class="col-sm-2 col-form-label">Width (mm)</label>
-            <div class="col-sm-10">
-              <input class="form-control" type="text" v-model="cutInWidth" id="cutInWidth" @input="removePrecedingZero('cutInWidth')" inputmode="numeric">
-            </div>
-          </div>
-        </div>
-        <div v-else-if="cutInType === 'Round'">
-          <div class="form-group row mt-3">
-            <label for="cutInRadius" class="col-sm-2 col-form-label">Radius (mm)</label>
-            <div class="col-sm-10">
-              <input class="form-control" type="text" v-model="cutInRadius" id="cutInRadius" @input="removePrecedingZero('cutInRadius')" inputmode="numeric">
-            </div>
-          </div>
-        </div>
+                </div>
+                <select v-model="cutInType" class="form-select">
+                  <option>Round</option>
+                  <option>Square</option>
+                </select>
+                <div v-if="cutInType === 'Square'">
+                  <div class="form-group row mt-3">
+                    <label for="cutInLength" class="col-sm-2 col-form-label">Length (mm)</label>
+                    <div class="col-sm-10">
+                      <input class="form-control" type="text" v-model="cutInLength" id="cutInLength"
+                             @input="removePrecedingZero('cutInLength')" inputmode="numeric">
+                    </div>
+                  </div>
+                  <div class="form-group row mt-3">
+                    <label for="cutInWidth" class="col-sm-2 col-form-label">Width (mm)</label>
+                    <div class="col-sm-10">
+                      <input class="form-control" type="text" v-model="cutInWidth" id="cutInWidth"
+                             @input="removePrecedingZero('cutInWidth')" inputmode="numeric">
+                    </div>
+                  </div>
+                </div>
+                <div v-else-if="cutInType === 'Round'">
+                  <div class="form-group row mt-3">
+                    <label for="cutInRadius" class="col-sm-2 col-form-label">Radius (mm)</label>
+                    <div class="col-sm-10">
+                      <input class="form-control" type="text" v-model="cutInRadius" id="cutInRadius"
+                             @input="removePrecedingZero('cutInRadius')" inputmode="numeric">
+                    </div>
+                  </div>
+                </div>
 
-        <div class="form-group row mt-3">
-          <label for="currentCutInQuantity" class="col-sm-2 col-form-label">pcs</label>
-          <div class="col-sm-10">
-            <input class="form-control" type="text" v-model="currentCutInQuantity" id="currentCutInQuantity" @input="removePrecedingZero('currentCutInQuantity')" inputmode="numeric">
-          </div>
-        </div>
-        <button @click="addCutIn" class="btn-lg btn-primary m-2">Add</button>
+                <div class="form-group row mt-3">
+                  <label for="currentCutInQuantity" class="col-sm-2 col-form-label">pcs</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" type="text" v-model="currentCutInQuantity" id="currentCutInQuantity"
+                           @input="removePrecedingZero('currentCutInQuantity')" inputmode="numeric">
+                  </div>
+                </div>
+                <button @click="addCutIn" class="btn-lg btn-primary m-2">Add</button>
 
-        <div class="card bg-warning">
-          <div class="card-body">
-            <div class="col-md-6 m-auto">
-              <h1>Cut-ins</h1>
-              <div class="row border-bottom-dark">
-                <div class="col">Cut-in type</div>
-                <div class="col"><strong>width</strong> mm</div>
-                <div class="col"><strong>length</strong> mm</div>
-                <div class="col"><strong>radius</strong> mm</div>
+                <div class="card bg-warning">
+                  <div class="card-body">
+                    <div class="col-md-6 m-auto">
+                      <h1>Cut-ins</h1>
+                      <div class="row border-bottom-dark">
+                        <div class="col">Cut-in type</div>
+                        <div class="col"><strong>width</strong> mm</div>
+                        <div class="col"><strong>length</strong> mm</div>
+                        <div class="col"><strong>radius</strong> mm</div>
+                      </div>
+                      <div v-for="(cutIn, index) in cutIns" :key="index" class="row bg-warning border-bottom-dark">
+                        <div class="col">{{ cutIn.type }}</div>
+                        <div class="col"><strong>{{ cutIn.width }}</strong> mm</div>
+                        <div class="col"><strong>{{ cutIn.length }}</strong> mm</div>
+                        <div class="col"><strong>{{ cutIn.radius }}</strong> mm</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div v-for="(cutIn, index) in cutIns" :key="index" class="row bg-warning border-bottom-dark">
-                <div class="col">{{ cutIn.type }}</div>
-                <div class="col"><strong>{{ cutIn.width }}</strong> mm</div>
-                <div class="col"><strong>{{ cutIn.length }}</strong> mm</div>
-                <div class="col"><strong>{{ cutIn.radius }}</strong> mm</div>
-              </div>
             </div>
           </div>
         </div>
+
+
       </div>
 
 
