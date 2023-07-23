@@ -43,7 +43,7 @@
 
         <br>
       </div>
-
+<!--     END ITEM-->
 
 
 <!--      CUT-INS-->
@@ -129,7 +129,7 @@
 
 
       </div>
-
+<!--      END CUT-INS-->
 
     </div>
 
@@ -248,7 +248,8 @@ export default {
       return this.dataForSelectedMaterial.nozzleType;
     },
     nozzleDiameter() {
-      return 1.5
+      let data = this.costDataForSelectedMaterial.filter(c => c.thickness == this.thickness)[0]
+      return data?.nozzleDiameter ?? '-'
     }
   },
   methods: {

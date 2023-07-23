@@ -6,6 +6,7 @@ export default {
         costs:  [
             {
                 "thickness": "0.5",
+                "nozzleDiameter": 1,
                 "small": 0.78,
                 "medium": 0.60,
                 "large": 0.53,
@@ -13,6 +14,7 @@ export default {
             },
             {
                 "thickness": "1",
+                "nozzleDiameter": 1,
                 "small": 1.05,
                 "medium": 0.75,
                 "large": 0.68,
@@ -20,6 +22,7 @@ export default {
             },
             {
                 "thickness": "2",
+                "nozzleDiameter": 1.2,
                 "small": 1.33,
                 "medium": 1.08,
                 "large": 0.98,
@@ -27,6 +30,7 @@ export default {
             },
             {
                 "thickness": "3",
+                "nozzleDiameter": 1.2,
                 "small": 1.58,
                 "medium": 1.25,
                 "large": 1.13,
@@ -34,6 +38,7 @@ export default {
             },
             {
                 "thickness": "4",
+                "nozzleDiameter": 1.2,
                 "small": 1.80,
                 "medium": 1.33,
                 "large": 1.15,
@@ -41,6 +46,7 @@ export default {
             },
             {
                 "thickness": "5",
+                "nozzleDiameter": 1.2,
                 "small": 2.08,
                 "medium": 1.63,
                 "large": 1.33,
@@ -48,6 +54,7 @@ export default {
             },
             {
                 "thickness": "6",
+                "nozzleDiameter": 1.2,
                 "small": 2.35,
                 "medium": 1.85,
                 "large": 1.50,
@@ -55,6 +62,7 @@ export default {
             },
             {
                 "thickness": "8",
+                "nozzleDiameter": 1.2,
                 "small": 3.35,
                 "medium": 2.60,
                 "large": 2.18,
@@ -62,6 +70,7 @@ export default {
             },
             {
                 "thickness": "10",
+                "nozzleDiameter": 1.5,
                 "small": 5.08,
                 "medium": 3.93,
                 "large": 3.28,
@@ -69,6 +78,7 @@ export default {
             },
             {
                 "thickness": "12",
+                "nozzleDiameter": 1.5,
                 "small": 6.25,
                 "medium": 4.90,
                 "large": 4.08,
@@ -76,6 +86,7 @@ export default {
             },
             {
                 "thickness": "14",
+                "nozzleDiameter": 2.0,
                 "small": 7.50,
                 "medium": 6.00,
                 "large": 5.00,
@@ -83,6 +94,7 @@ export default {
             },
             {
                 "thickness": "16",
+                "nozzleDiameter": 2.5,
                 "small": 8.75,
                 "medium": 7.00,
                 "large": 5.88,
@@ -90,6 +102,7 @@ export default {
             },
             {
                 "thickness": "18",
+                "nozzleDiameter": 3.0,
                 "small": 10.00,
                 "medium": 8.00,
                 "large": 6.75,
@@ -97,6 +110,7 @@ export default {
             },
             {
                 "thickness": "20",
+                "nozzleDiameter": 4.0,
                 "small": 11.25,
                 "medium": 9.00,
                 "large": 7.50,
@@ -104,6 +118,7 @@ export default {
             },
             {
                 "thickness": "22",
+                "nozzleDiameter": 4.5,
                 "small": 12.50,
                 "medium": 10.50,
                 "large": 8.25,
@@ -118,6 +133,7 @@ export default {
         costs: [
             {
                 "thickness": "0.5",
+                "nozzleDiameter": 1.5,
                 "small": 0.90,
                 "medium": 0.75,
                 "large": 0.73,
@@ -125,6 +141,7 @@ export default {
             },
             {
                 "thickness": "1",
+                "nozzleDiameter": 2.0,
                 "small": 1.18,
                 "medium": 1.05,
                 "large": 0.88,
@@ -132,6 +149,7 @@ export default {
             },
             {
                 "thickness": "2",
+                "nozzleDiameter": 2.5,
                 "small": 1.40,
                 "medium": 1.23,
                 "large": 1.13,
@@ -139,6 +157,7 @@ export default {
             },
             {
                 "thickness": "3",
+                "nozzleDiameter": 2.5,
                 "small": 1.70,
                 "medium": 1.45,
                 "large": 1.40,
@@ -146,6 +165,7 @@ export default {
             },
             {
                 "thickness": "4",
+                "nozzleDiameter": 3.0,
                 "small": 2.03,
                 "medium": 1.78,
                 "large": 1.65,
@@ -153,6 +173,7 @@ export default {
             },
             {
                 "thickness": "5",
+                "nozzleDiameter": 3.0,
                 "small": 2.40,
                 "medium": 2.05,
                 "large": 1.98,
@@ -160,6 +181,7 @@ export default {
             },
             {
                 "thickness": "6",
+                "nozzleDiameter": 3.5,
                 "small": 4.20,
                 "medium": 3.60,
                 "large": 3.10,
@@ -167,6 +189,7 @@ export default {
             },
             {
                 "thickness": "8",
+                "nozzleDiameter": 4.0,
                 "small": 7.40,
                 "medium": 6.50,
                 "large": 5.88,
@@ -174,6 +197,7 @@ export default {
             },
             {
                 "thickness": "10",
+                "nozzleDiameter": 4.5,
                 "small": 11.25,
                 "medium": 10.50,
                 "large": 10.00,
@@ -181,6 +205,7 @@ export default {
             },
             {
                 "thickness": "12",
+                "nozzleDiameter": 5.0,
                 "small": 15.00,
                 "medium": 14.25,
                 "large": 13.75,
@@ -195,6 +220,7 @@ export default {
         costs: [
             {
                 "thickness": "0.5",
+                "nozzleDiameter": 1.5,
                 "small": 0.90,
                 "medium": 0.75,
                 "large": 0.73,
@@ -202,6 +228,7 @@ export default {
             },
             {
                 "thickness": "1",
+                "nozzleDiameter": 1.5,
                 "small": 1.18,
                 "medium": 1.05,
                 "large": 0.88,
@@ -209,6 +236,7 @@ export default {
             },
             {
                 "thickness": "2",
+                "nozzleDiameter": 3.5,
                 "small": 1.40,
                 "medium": 1.23,
                 "large": 1.13,
@@ -216,6 +244,7 @@ export default {
             },
             {
                 "thickness": "3",
+                "nozzleDiameter": 3.0, // is this correct?
                 "small": 1.70,
                 "medium": 1.45,
                 "large": 1.40,
@@ -223,6 +252,7 @@ export default {
             },
             {
                 "thickness": "4",
+                "nozzleDiameter": 3.5,
                 "small": 2.03,
                 "medium": 1.78,
                 "large": 1.65,
@@ -230,6 +260,7 @@ export default {
             },
             {
                 "thickness": "5",
+                "nozzleDiameter": 4.0,
                 "small": 2.40,
                 "medium": 2.05,
                 "large": 1.98,
@@ -237,6 +268,7 @@ export default {
             },
             {
                 "thickness": "6",
+                "nozzleDiameter": 4.0,
                 "small": 4.20,
                 "medium": 3.60,
                 "large": 3.10,
@@ -244,6 +276,7 @@ export default {
             },
             {
                 "thickness": "8",
+                "nozzleDiameter": 4.5,
                 "small": 7.40,
                 "medium": 6.38,
                 "large": 5.55,
@@ -251,6 +284,7 @@ export default {
             },
             {
                 "thickness": "10",
+                "nozzleDiameter": 5.0,
                 "small": 10.50,
                 "medium": 9.25,
                 "large": 8.55,
@@ -258,13 +292,14 @@ export default {
             }
         ]
     },
-    "Copper" : {
+    "Copper": {
         density: 8.96,
         gas: "N2",
         nozzleType: "D",
         costs: [
             {
                 "thickness": "0.5",
+                "nozzleDiameter": 1.5,
                 "small": 0.90,
                 "medium": 0.75,
                 "large": 0.73,
@@ -272,6 +307,7 @@ export default {
             },
             {
                 "thickness": "1",
+                "nozzleDiameter": 1.5,
                 "small": 1.18,
                 "medium": 1.05,
                 "large": 0.88,
@@ -279,6 +315,7 @@ export default {
             },
             {
                 "thickness": "2",
+                "nozzleDiameter": 3.5,
                 "small": 1.40,
                 "medium": 1.23,
                 "large": 1.13,
@@ -286,6 +323,7 @@ export default {
             },
             {
                 "thickness": "3",
+                "nozzleDiameter": 3.0,
                 "small": 1.70,
                 "medium": 1.45,
                 "large": 1.40,
@@ -293,6 +331,7 @@ export default {
             },
             {
                 "thickness": "4",
+                "nozzleDiameter": 3.5,
                 "small": 2.03,
                 "medium": 1.78,
                 "large": 1.65,
@@ -300,6 +339,7 @@ export default {
             },
             {
                 "thickness": "6",
+                "nozzleDiameter": 4.0,
                 "small": 2.40,
                 "medium": 2.05,
                 "large": 1.98,
@@ -307,6 +347,7 @@ export default {
             },
             {
                 "thickness": "8",
+                "nozzleDiameter": 4.5,
                 "small": 4.20,
                 "medium": 3.60,
                 "large": 3.10,
