@@ -37,7 +37,7 @@
         <div class="form-group row ">
           <label for="costOfMaterialPerKg" class="col-sm-2 col-form-label">Material cost (per kg)</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text" id="costOfMaterialPerKg" v-model="costOfMaterialPerKg" @input="removePrecedingZero('costOfMaterialPerKg')" inputmode="decimal">
+            <input class="form-control" type="text" id="costOfMaterialPerKg" v-model="costOfMaterialPerKg" @input="formatCost('costOfMaterialPerKg')" inputmode="decimal">
           </div>
         </div>
 
@@ -280,6 +280,10 @@ export default {
       if (this[field].startsWith('0')) {
         this[field] = this[field].replace(/^0+/, '');
       }
+    },
+    formatCost(field) {
+      this.removePrecedingZero(field);
+      this[field] = this[field].replace(',', '.');
     },
 
     getIcon() {
