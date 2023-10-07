@@ -48,6 +48,7 @@
 
 <!--      CUT-INS-->
       <div class="col-md-6">
+        <h1>Cut-ins</h1>
         <div class="accordion" id="accordionExample">
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
