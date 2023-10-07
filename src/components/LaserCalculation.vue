@@ -37,7 +37,7 @@
         <div class="form-group row ">
           <label for="costOfMaterialPerKg" class="col-sm-2 col-form-label">Material cost (per kg)</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text" id="costOfMaterialPerKg" v-model="costOfMaterialPerKg" @input="removePrecedingZero('costOfMaterialPerKg')" inputmode="numeric">
+            <input class="form-control" type="text" id="costOfMaterialPerKg" v-model="costOfMaterialPerKg" @input="removePrecedingZero('costOfMaterialPerKg')" inputmode="decimal">
           </div>
         </div>
 
