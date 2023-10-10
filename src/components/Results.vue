@@ -28,8 +28,12 @@
           <div class="col"><strong>{{ costOfMaterial.toFixed(2) }}</strong></div>
         </div>
         <div class="row bg-primary text-white border-bottom-dark">
-          <div class="col">Total cost</div>
+          <div class="col">Total self-cost</div>
           <div class="col"><strong>{{ totalCost.toFixed(2) }}</strong></div>
+        </div>
+        <div class="row bg-success text-white border-bottom-dark">
+          <div class="col">Total price</div>
+          <div class="col"><strong>{{ totalPrice.toFixed(2) }}</strong></div>
         </div>
         <button @click="downloadResults" class="btn-lg btn-success m-3">Download Results</button>
       </div>
@@ -41,11 +45,14 @@ import downloadExcel from "@/service/excelService";
 
 export default {
   name: 'Results',
-  props: ['weight', 'cutInQuantity', 'cutLength', 'costOfCut', 'costOfCutIns', 'costOfMaterial'],
+  props: ['weight', 'cutInQuantity', 'cutLength', 'costOfCut', 'costOfCutIns', 'costOfMaterial', 'pricingCoefficient'],
   computed: {
     totalCost() {
       return this.costOfCut + this.costOfCutIns + this.costOfMaterial
-    }
+    },
+    totalPrice() {
+      return this.totalCost * this.pricingCoefficient
+    },
   },
   methods: {
     downloadResults() {

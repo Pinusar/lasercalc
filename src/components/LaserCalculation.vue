@@ -27,17 +27,24 @@
           </div>
         </div>
 
-        <div class="form-group row ">
+        <div class="form-group row">
           <label for="thickness" class="col-sm-2 col-form-label">Thickness (mm)</label>
           <div class="col-sm-10">
             <input class="form-control" type="text" id="thickness" v-model="thickness" @input="removePrecedingZero('thickness')" inputmode="numeric">
           </div>
         </div>
 
-        <div class="form-group row ">
+        <div class="form-group row">
           <label for="costOfMaterialPerKg" class="col-sm-2 col-form-label">Material cost (per kg)</label>
           <div class="col-sm-10">
             <input class="form-control" type="text" id="costOfMaterialPerKg" v-model="costOfMaterialPerKg" @input="formatCost('costOfMaterialPerKg')" inputmode="decimal">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="pricingCoefficient" class="col-sm-2 col-form-label">Pricing coefficient</label>
+          <div class="col-sm-10">
+            <input class="form-control" type="text" id="pricingCoefficient" v-model="pricingCoefficient" @input="removePrecedingZero('pricingCoefficient')" inputmode="decimal">
           </div>
         </div>
 
@@ -152,6 +159,7 @@
             :cost-of-cut="currentCostOfCut"
             :cost-of-cut-ins="costOfCutIns"
             :cost-of-material="costOfMaterial"
+            :pricing-coefficient="pricingCoefficient"
         />
       </div>
 
@@ -190,6 +198,7 @@ export default {
       cutIns: [],
       costOfCutData: materialData,
       costOfMaterialPerKg: 0,
+      pricingCoefficient: 1,
     }
   },
   computed: {
