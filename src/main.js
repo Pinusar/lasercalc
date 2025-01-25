@@ -1,5 +1,6 @@
 import {createApp} from 'vue'
 import { createPinia } from 'pinia';
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import App from './App.vue'
 import router from "@/router";
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -36,6 +37,7 @@ import {
 library.add(faUserSecret, faEnvelope, faUser, faCogs, faList, faSearch, faBell, faLaughWink, faTachometerAlt, faWrench, faFolder, faChartArea, faTable, faDownload)
 
 const pinia = createPinia();
+pinia.use(piniaPluginPersistedstate);
 
 createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)

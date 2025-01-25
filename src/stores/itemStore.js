@@ -53,6 +53,7 @@ export const useItemsStore = defineStore('itemsStore', {
       },
     ],
   }),
+  persist: true,
 
   getters: {
     getItems: (state) => state.items,
