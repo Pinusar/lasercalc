@@ -73,6 +73,7 @@ export default {
       ];
       downloadExcel(wsData, cutInsData);
     },
+
   }
 }
 </script>

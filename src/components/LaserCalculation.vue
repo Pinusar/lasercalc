@@ -1,5 +1,6 @@
 <template>
   <div>
+    <router-link to="/items">To items</router-link>
     <div class="row">
 
 <!--      ITEM-->
@@ -161,6 +162,8 @@
             :cost-of-material="costOfMaterial"
             :pricing-coefficient="pricingCoefficient"
         />
+
+        <button @click="saveItem" class="btn-lg btn-warning m-3">Save item</button>
       </div>
 
     </div>
@@ -177,6 +180,7 @@ import CostData from "@/components/CostData.vue";
 import Results from "@/components/Results.vue";
 import {getCirclePerimeter, getSquarePerimeter} from "@/service/geometryService";
 import NozzleInfo from "@/components/NozzleInfo.vue";
+import {useItemsStore} from "@/stores/itemStore";
 
 export default {
   name: 'LaserCalculation',
@@ -186,6 +190,7 @@ export default {
   },
   data() {
     return {
+      itemsStore: null,
       material: 'Carbon steel',
       length: 0,
       width: 0,
@@ -297,7 +302,21 @@ export default {
 
     getIcon() {
       return this.cutInType === 'Square' ? squareIcon : circleIcon
-    }
+    },
+    saveItem() {
+      this.itemsStore.addItem({
+        id: 1,
+        material: this.material,
+        length: this.length,
+        width: this.width,
+        thickness: this.thickness,
+        weight: this.weight,
+        totalPrice: this.totalPrice
+      });
+    },
+  },
+  created() {
+    this.itemsStore = useItemsStore();
   },
   mounted() {
     this.costOfCutData = materialData
